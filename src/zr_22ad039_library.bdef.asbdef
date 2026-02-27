@@ -1,0 +1,64 @@
+managed implementation in class ZBP_R_22AD039_LIBRARY unique;
+strict ( 2 );
+with draft;
+extensible;
+define behavior for ZR_22AD039_LIBRARY alias Zr22ad039Library
+persistent table Z22AD039_LIBRARY
+extensible
+draft table Z22D039_LBRARY_D
+etag master LocalLastChangedAt
+lock master total etag LastChangedAt
+authorization master( global )
+{
+  field ( mandatory : create )
+   BookID;
+
+  field ( readonly )
+   CreatedBy,
+   CreatedAt,
+   LastChangedBy,
+   LastChangedAt,
+   LocalLastChangedAt;
+
+  field ( readonly : update )
+   BookID;
+
+
+  create;
+  update;
+  delete;
+
+  draft action Activate optimized;
+  draft action Discard;
+  draft action Edit;
+  draft action Resume;
+  draft determine action Prepare;
+
+  mapping for Z22AD039_LIBRARY corresponding extensible
+  {
+    BookID = BOOK_ID;
+    IsbnNumber = ISBN_NUMBER;
+    BookTitle = BOOK_TITLE;
+    AuthorName = AUTHOR_NAME;
+    PublisherName = PUBLISHER_NAME;
+    Category = CATEGORY;
+    Language = LANGUAGE;
+    Edition = EDITION;
+    PublishDate = PUBLISH_DATE;
+    TotalPages = TOTAL_PAGES;
+    ShelfNumber = SHELF_NUMBER;
+    RackNumber = RACK_NUMBER;
+    Currency = CURRENCY;
+    Price = PRICE;
+    AvailableQuantity = AVAILABLE_QUANTITY;
+    IssuedQuantity = ISSUED_QUANTITY;
+    TotalQuantity = TOTAL_QUANTITY;
+    AvailabilityStatus = AVAILABILITY_STATUS;
+    CreatedBy = CREATED_BY;
+    CreatedAt = CREATED_AT;
+    LastChangedBy = LAST_CHANGED_BY;
+    LastChangedAt = LAST_CHANGED_AT;
+    LocalLastChangedAt = LOCAL_LAST_CHANGED_AT;
+  }
+
+}

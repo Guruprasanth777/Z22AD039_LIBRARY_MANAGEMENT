@@ -1,0 +1,11 @@
+@EndUserText: {
+  label: 'Service Definition for ZC_22AD039_LIBRARY'
+}
+@ObjectModel: {
+  leadingEntity: {
+    name: 'ZC_22AD039_LIBRARY'
+  }
+}
+define service ZUI_Z22AD039_LIBRARY_O4 provider contracts odata_v4_ui {
+  expose ZC_22AD039_LIBRARY;
+}
